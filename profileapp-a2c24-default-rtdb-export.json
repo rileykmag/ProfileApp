@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "age": { "type": "number" },
+      "hometown": { "type": "string" },
+      "image": { "type": "string", "format": "uri" },
+      "major": { "type": "string" },
+      "name": { "type": "string" }
+    },
+    "required": ["age", "hometown", "major", "name"],
+    "additionalProperties": false
+  }
+}
