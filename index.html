@@ -107,17 +107,32 @@
             });
         }
 
+        function retrieveImage(itemID, list){
+            var itemRef = database.ref(itemID);
+            itemRef.on("value", function(snapshot) {
+                var data = snapshot.val();
+                var image = data.image;
+                var imgElement = document.createElement("img");
+                imgElement.src = image;
+                imgElement.style.width = "200px";
+                imgElement.style.height = "auto"; 
+                list.appendChild(imgElement);
+            });
+        }
+
         //First Profile
         retrieveName(firstID, profileList1);
         retrieveAge(firstID, profileList1);
         retrieveMajor(firstID, profileList1);
         retrieveHometown(firstID, profileList1);
+        retrieveImage(firstID, profileList1);
 
         //Second Profile
         retrieveName(secondID, profileList2);
         retrieveAge(secondID, profileList2);
         retrieveMajor(secondID, profileList2);
         retrieveHometown(secondID, profileList2);
+        retrieveImage(secondID, profileList2);
         
     </script>
 
